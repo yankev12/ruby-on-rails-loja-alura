@@ -7,32 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<%= nav_bar brand: "Loja", brand_link: root_url  %>
+<div class="container">
+    <body>
+        <table class="table table-border table-hover">
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Descrição</td>
+                    <td>Preço</td>
+                    <td>Quantidade</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% @produtos.each do |produto|%>
+                <tr>
+                    <td><%= produto.nome %></td>
+                    <td><%= produto.descricao %></td>
+                    <td><%= produto.preco %></td>
+                    <td><%= produto.quantidade %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <div class="alert alert-success" role="alert">
+            <h4 class="laert-heading">Produtos com desconto</h4>
+        </div>
+        <table class="table table-border table-hover">
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Descrição</td>
+                    <td>Preço</td>
+                    <td>Quantidade</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% @produtos_com_desconto.each do |produto|%>
+                <tr>
+                    <td><%= produto.nome %></td>
+                    <td><%= produto.descricao %></td>
+                    <td><%= produto.preco %></td>
+                    <td><%= produto.quantidade %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </body>
+</div>
 
-<body>
-    <table>
-        <thead>
-            <tr>
-                <td>Nome</td>
-                <td>Descrição</td>
-                <td>Preço</td>
-                <td>Quantidade</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Camiseta</td>
-                <td>Bem Bonita</td>
-                <td>30</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>Luva</td>
-                <td>Para os dias frios</td>
-                <td>39</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-</body>
 
 </html>
