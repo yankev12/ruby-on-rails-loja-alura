@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<%= form_for Produto.new do |form|%>
+    <div class="row">
+        <div class="col-sm-8">
+            <%= form.label :nome %>
+            <%= form.text_field :nome, class:"form-control" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <%= form.label :descricao %>
+            <%= form.text_area :descricao, class:"form-control", rows: 4 %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <%= form.label :preco %>
+            <%= form.number_field :preco, class:"form-control", step: 0.01 %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <%= form.label :quantidade %>
+            <%= form.number_field :quantidade, class:"form-control" %>
+        </div>
+    </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <%= form_for Produto.new do |form|%>
-        Nome <input type="text" name="produto[nome]"><br />
-        Descrição <textarea name="produto[descricao]" id="" cols="30" rows="2"></textarea><br />
-        Preço <input type="number" name="produto[preco]" step="0.01"><br />
-        Quantidade <input type="number" name="produto[quantidade]" step="0.01"><br />
-        <button type="submit">Criar</button>
-    <% end %>
-</body>
-
-</html>
+    <%= form.submit "Criar", class:"btn btn-primary"%>
+<% end %>
