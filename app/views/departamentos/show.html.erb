@@ -1,14 +1,20 @@
+<p id="notice"><%= notice %></p>
+
 <table class="table table-border table-hover">
     <thead>
         <tr>
             <td>Nome</td>
             <td>Descrição</td>
+            <td>Departamento</td>
             <td>Preço</td>
             <td>Quantidade</td>
-            <td colspan="1"></td>
+            <td colspan="2"></td>
         </tr>
     </thead>
     <tbody>
         <%= render @produtos %>
     </tbody>
 </table>
+
+<%= link_to 'Edit', edit_departamento_path(@departamento) %> |
+<%= link_to 'Back', departamentos_path %>
